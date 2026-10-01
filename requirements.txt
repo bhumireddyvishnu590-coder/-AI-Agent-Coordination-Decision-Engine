@@ -1,0 +1,21 @@
+fastapi>=0.111
+uvicorn[standard]>=0.29
+pydantic>=2.6
+python-dotenv>=1.0
+pyjwt>=2.8
+
+# RAG stack (LangChain + Chroma + HuggingFace embeddings, per the project
+# brief). Optional at runtime: if these aren't installed, or there's no
+# network to download the embedding model from HuggingFace, the RAG agent
+# automatically falls back to a built-in keyword retriever — nothing else
+# in the app changes or breaks.
+langchain-core>=0.2
+langchain-community>=0.2
+langchain-huggingface>=0.0.3
+chromadb>=0.5
+sentence-transformers>=2.7
+
+# LLM-backed agent reasoning (Research / Analysis / Decision). Optional:
+# only activates if LLM_API_KEY is set in .env; otherwise every agent that
+# would call this falls back to deterministic, templated reasoning.
+langchain-openai>=0.1
